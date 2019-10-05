@@ -1,4 +1,4 @@
-package com.study.epamproject.domain;
+package com.study.epamproject.domain.toys;
 
 public class ElectronicToy extends Toy {
     private final long ramSize;

@@ -1,4 +1,4 @@
-package com.study.epamproject.domain;
+package com.study.epamproject.domain.toys;
 
 public class Computer extends ElectronicToy {
     private final VideoCard videoCardModel;

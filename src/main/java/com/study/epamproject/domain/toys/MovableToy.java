@@ -1,4 +1,4 @@
-package com.study.epamproject.domain;
+package com.study.epamproject.domain.toys;
 
 public class MovableToy extends Toy{
     private final int numberOfWheels;

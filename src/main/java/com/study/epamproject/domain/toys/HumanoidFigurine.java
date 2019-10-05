@@ -1,4 +1,4 @@
-package com.study.epamproject.domain;
+package com.study.epamproject.domain.toys;
 
 public abstract class HumanoidFigurine extends Figurine {
     private final String gender;
