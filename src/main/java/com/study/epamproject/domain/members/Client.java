@@ -2,7 +2,6 @@ package com.study.epamproject.domain.members;
 
 import com.study.epamproject.domain.toys.Toy;
 
-import javax.rmi.CORBA.StubDelegate;
 import java.util.List;
 
 public class Client extends User {

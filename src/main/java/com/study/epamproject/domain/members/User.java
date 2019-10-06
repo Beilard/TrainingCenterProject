@@ -42,7 +42,8 @@ public class User {
         private String email;
         private String password;
 
-        protected UserBuilder(){}
+        protected UserBuilder() {
+        }
 
         @SuppressWarnings("unchecked")
         public B self() {
