@@ -14,12 +14,11 @@ public class ConsoleServiceUtility {
             scanner.nextLine();
         }
         int i = scanner.nextInt();
+        scanner.nextLine();
         return i;
     }
 
     public static String readString() {
-        System.out.println("scanner string");
-        scanner.nextLine();
         return scanner.nextLine();
     }
 
