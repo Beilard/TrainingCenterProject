@@ -3,7 +3,7 @@ package com.study.epamproject.domain.users;
 public class Admin extends Client {
     private final Address supervisorName;
 
-    protected Admin(AdminBuilder adminBuilder) {
+    public Admin(AdminBuilder adminBuilder) {
         super(adminBuilder);
         this.supervisorName = adminBuilder.supervisorName;
     }

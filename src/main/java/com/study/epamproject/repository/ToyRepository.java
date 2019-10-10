@@ -6,11 +6,11 @@ import com.study.epamproject.domain.toys.Toy;
 import java.util.List;
 import java.util.Optional;
 
-public interface ToyRepository<E extends Toy> extends CrudRepository<E> {
+public interface ToyRepository extends CrudRepository<Toy> {
 
-    List<E> findAllByManufacturer(Manufacturer manufacturer);
+    List<Toy> findAllByManufacturer(Manufacturer manufacturer);
 
     Optional<Toy> findByName(String name);
 
-    List<E> sortByPrice();
+    List<Toy> sortByPrice();
 }

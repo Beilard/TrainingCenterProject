@@ -5,7 +5,7 @@ import com.study.epamproject.repository.ClientRepository;
 
 import java.util.*;
 
-public class ClientRepositoryImpl<E extends Client> implements ClientRepository<E> {
+public class ClientRepositoryImpl<E extends Client> implements ClientRepository {
     Map<Long, Client> idToClient = new HashMap<>();
 
     @Override
@@ -63,22 +63,22 @@ public class ClientRepositoryImpl<E extends Client> implements ClientRepository<
     }
 
     @Override
-    public Optional<E> findById(Long id) {
-        return (Optional<E>) Optional.ofNullable(idToClient.get(id));
+    public Optional<Client> findById(Long id) {
+        return Optional.ofNullable(idToClient.get(id));
     }
 
     @Override
-    public List<E> findAll() {
-        return (List<E>) idToClient.values();
+    public List<Client> findAll() {
+        return (List<Client>) idToClient.values();
     }
 
     @Override
-    public void update(E item) {
+    public void update(Client item) {
         idToClient.put(item.getId(), item);
     }
 
     @Override
-    public Optional<E> deleteById(Long id) {
-        return (Optional<E>) Optional.ofNullable(idToClient.remove(id));
+    public Optional<Client> deleteById(Long id) {
+        return Optional.ofNullable(idToClient.remove(id));
     }
 }

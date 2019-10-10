@@ -1,5 +1,6 @@
 package com.study.epamproject.service.encoder;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
@@ -7,7 +8,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class PasswordEncoder {
-    private static final Logger LOGGER = Logger.getLogger("file");
+    private static final Logger LOGGER = LogManager.getLogger(PasswordEncoder.class);
 
     public String encode(String pass){
         try {

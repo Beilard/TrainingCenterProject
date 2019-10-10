@@ -4,7 +4,7 @@ import com.study.epamproject.domain.users.Client;
 
 import java.util.Optional;
 
-public interface ClientRepository<E extends Client> extends CrudRepository<E> {
+public interface ClientRepository extends CrudRepository<Client> {
     Optional<Client> findByName(String name);
 
     Optional<Client> findBySurname(String surname);

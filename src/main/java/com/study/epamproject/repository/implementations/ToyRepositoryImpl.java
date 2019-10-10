@@ -6,11 +6,11 @@ import com.study.epamproject.repository.ToyRepository;
 
 import java.util.*;
 
-public class ToyRepositoryImpl<E extends Toy> implements ToyRepository<E> {
+public class ToyRepositoryImpl implements ToyRepository {
     Map<Long, Toy> idToToy = new HashMap<>();
 
     @Override
-    public List<E> findAllByManufacturer(Manufacturer manufacturer) {
+    public List<Toy> findAllByManufacturer(Manufacturer manufacturer) {
         List<Toy> list = new LinkedList<>();
 
         for (Toy t : idToToy.values()) {
@@ -18,7 +18,7 @@ public class ToyRepositoryImpl<E extends Toy> implements ToyRepository<E> {
                 list.add(t);
             }
         }
-        return (List<E>) list;
+        return list;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class ToyRepositoryImpl<E extends Toy> implements ToyRepository<E> {
     }
 
     @Override
-    public List<E> sortByPrice() {
+    public List<Toy> sortByPrice() {
         return null;
     }
 
@@ -44,22 +44,22 @@ public class ToyRepositoryImpl<E extends Toy> implements ToyRepository<E> {
     }
 
     @Override
-    public Optional<E> findById(Long id) {
-        return (Optional<E>) Optional.ofNullable(idToToy.get(id));
+    public Optional<Toy> findById(Long id) {
+        return Optional.ofNullable(idToToy.get(id));
     }
 
     @Override
-    public List<E> findAll() {
-        return (List<E>) idToToy.values();
+    public List<Toy> findAll() {
+        return (List<Toy>) idToToy.values();
     }
 
     @Override
-    public void update(E item) {
+    public void update(Toy item) {
         idToToy.put(item.getId(), item);
     }
 
     @Override
-    public Optional<E> deleteById(Long id) {
-        return (Optional<E>) Optional.ofNullable(idToToy.remove(id));
+    public Optional<Toy> deleteById(Long id) {
+        return Optional.ofNullable(idToToy.remove(id));
     }
 }

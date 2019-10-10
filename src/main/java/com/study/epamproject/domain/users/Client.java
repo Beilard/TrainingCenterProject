@@ -13,7 +13,7 @@ public class Client {
     private final int budget;
 
 
-    protected Client(ClientBuilder<? extends ClientBuilder> clientBuilder) {
+    public Client(ClientBuilder<? extends ClientBuilder> clientBuilder) {
         this.ordersById = null;
         this.id = clientBuilder.id;
         this.name = clientBuilder.name;

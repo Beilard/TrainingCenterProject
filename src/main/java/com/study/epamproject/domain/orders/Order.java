@@ -18,4 +18,8 @@ public class Order {
     public List<? extends Toy> getItems() {
         return items;
     }
+
+    public Long getId() {
+        return id;
+    }
 }
