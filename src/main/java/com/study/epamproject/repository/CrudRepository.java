@@ -13,5 +13,5 @@ public interface CrudRepository<E> {
 
     void update(E item);
 
-    boolean deleteById(Long id); //optional with empty
+    Optional<E> deleteById(Long id); //optional with empty
 }

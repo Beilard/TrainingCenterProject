@@ -1,4 +1,4 @@
-package com.study.epamproject.domain.members;
+package com.study.epamproject.domain.users;
 
 public final class Address {
     private final String city;
