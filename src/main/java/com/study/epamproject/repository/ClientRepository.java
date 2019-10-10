@@ -1,6 +1,6 @@
 package com.study.epamproject.repository;
 
-import com.study.epamproject.domain.users.Client;
+import com.study.epamproject.domain.user.Client;
 
 import java.util.Optional;
 

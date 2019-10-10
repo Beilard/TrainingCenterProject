@@ -1,6 +1,6 @@
 package com.study.epamproject.service;
 
-import com.study.epamproject.domain.toys.Toy;
+import com.study.epamproject.domain.toy.Toy;
 
 import java.util.List;
 

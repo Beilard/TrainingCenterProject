@@ -1,7 +1,7 @@
 package com.study.epamproject.repository;
 
-import com.study.epamproject.domain.toys.Manufacturer;
-import com.study.epamproject.domain.toys.Toy;
+import com.study.epamproject.domain.toy.Manufacturer;
+import com.study.epamproject.domain.toy.Toy;
 
 import java.util.List;
 import java.util.Optional;
