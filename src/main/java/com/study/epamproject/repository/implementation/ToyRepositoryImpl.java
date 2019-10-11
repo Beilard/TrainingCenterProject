@@ -6,15 +6,16 @@ import com.study.epamproject.repository.ToyRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
+
 @Repository
 public class ToyRepositoryImpl implements ToyRepository {
-    private Map<Long, Toy> idToToy = new HashMap<>();
+    private List<Toy> toys = new LinkedList<>();
 
     @Override
     public List<Toy> findAllByManufacturer(Manufacturer manufacturer) {
         List<Toy> list = new LinkedList<>();
 
-        for (Toy t : idToToy.values()) {
+        for (Toy t : toys) {
             if (Objects.equals(t.getManufacturer(), manufacturer)) {
                 list.add(t);
             }
@@ -26,7 +27,7 @@ public class ToyRepositoryImpl implements ToyRepository {
     public Optional<Toy> findByName(String name) {
         Optional<Toy> toy = Optional.empty();
 
-        for (Toy t : idToToy.values()) {
+        for (Toy t : toys) {
             if (Objects.equals(t.getName(), name)) {
                 toy = Optional.of(t);
             }
@@ -36,41 +37,59 @@ public class ToyRepositoryImpl implements ToyRepository {
 
     @Override
     public List<Toy> sortByPrice() {
-        return null;
+        Collections.sort(toys);
+        List<Toy> another = toys;
+        return toys;
     }
 
     @Override
     public Toy save(Toy item) {
-        return idToToy.put(item.getId(), item);
+        toys.add(item);
+        return item;
     }
 
     @Override
     public Optional<Toy> findById(Long id) {
-        return Optional.ofNullable(idToToy.get(id));
+        for (Toy t : toys) {
+            if (t.getId().equals(id)) {
+                return Optional.ofNullable(t);
+            }
+        }
+        return Optional.empty();
     }
 
     @Override
     public List<Toy> findAll() {
-        return (List<Toy>) idToToy.values();
+        return toys;
     }
 
     @Override
     public void update(Toy item) {
-        idToToy.put(item.getId(), item);
+        for (Toy t : toys) {
+            if (t.getName().equals(item.getName())) {
+                toys.remove(t);
+                toys.add(item);
+            }
+        }
     }
 
     @Override
     public Optional<Toy> deleteById(Long id) {
-        return Optional.ofNullable(idToToy.remove(id));
+        for (Toy t : toys) {
+            if (t.getId().equals(id)) {
+                return Optional.ofNullable(t);
+            }
+        }
+        return Optional.empty();
     }
+
 
     @Override
     public String toString() {
-         List<Toy> list = (List) idToToy.values();
-         StringBuilder result = new StringBuilder();
-         for (Toy t : list) {
-             result.append(t.getId()).append(t.getName()).append("\t").append(t.getPrice()).append("\n");
-         }
-         return result.toString();
+        StringBuilder result = new StringBuilder();
+        for (Toy t : toys) {
+            result.append(t.getId()).append(t.getName()).append("\t").append(t.getPrice()).append("\n");
+        }
+        return result.toString();
     }
 }

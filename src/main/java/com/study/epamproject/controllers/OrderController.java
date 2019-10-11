@@ -30,7 +30,9 @@ public class OrderController {
         write("Select your options");
         write("1. Add a toy to the order");
         write("2. Remove a toy from the order");
-        write("3. Finish your order");
+        write("3. Sort by price");
+        write("4. Finish order");
+
         int option = read();
         selection(option, order, toyRepository);
     }
@@ -45,6 +47,9 @@ public class OrderController {
                 break;
             case 3:
                 //
+                break;
+            case 4:
+
                 break;
         }
     }

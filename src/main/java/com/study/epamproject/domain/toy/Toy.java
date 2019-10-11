@@ -1,6 +1,6 @@
 package com.study.epamproject.domain.toy;
 
-public abstract class Toy {
+public abstract class Toy implements Comparable{
     private Long id;
     private final String name;
     private final Integer price;
@@ -10,6 +10,16 @@ public abstract class Toy {
         this.name = name;
         this.price = price;
         this.manufacturer = manufacturer;
+    }
+
+    public int compareTo(Toy toy) {
+        if (price == toy.price) {
+            return 0;
+        } else if (price > toy.price) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 
     public Long getId() {
