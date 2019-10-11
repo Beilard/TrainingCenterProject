@@ -16,7 +16,7 @@ public class RegistrationController {
     public void register() {
         write("Please enter your email: ");
         String email = readString();
-        write("Please enter your password: ");
+        write("Please enter your password (minimum 8 characters, upper/lowercase + special symbol) : ");
         String password = readString();
         write("Please enter your budget: ");
         int budget = read();

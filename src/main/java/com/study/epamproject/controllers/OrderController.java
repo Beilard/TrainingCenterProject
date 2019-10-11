@@ -1,6 +1,7 @@
 package com.study.epamproject.controllers;
 
 import com.study.epamproject.domain.order.Order;
+import com.study.epamproject.domain.user.Client;
 import com.study.epamproject.repository.ToyRepository;
 import com.study.epamproject.service.OrderService;
 import org.springframework.stereotype.Component;
@@ -19,7 +20,7 @@ public class OrderController {
         this.inclusionController = inclusionController;
     }
 
-    public void order() {
+    public void order(Client client) {
         Order order = orderService.create();
         write("Here's a list of available toys: ");
         write("ID Item \t\t\t Price");
@@ -35,6 +36,7 @@ public class OrderController {
 
         int option = read();
         selection(option, order, toyRepository);
+        order(client);
     }
 
     private void selection(int option, Order order, ToyRepository toyRepository) {
@@ -49,7 +51,8 @@ public class OrderController {
                 toyRepository.sortByPrice();
                 break;
             case 4:
-
+                orderService.saveOrder(order);
+                System.exit(0);
                 break;
         }
     }

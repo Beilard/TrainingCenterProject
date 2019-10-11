@@ -10,6 +10,8 @@ public interface OrderService<E extends Toy> {
 
     void addItem(Order order, E toy, int amount);
 
+    void saveOrder(Order order);
+
     List<E> getAll(Order order);
 
     void remove(Order order, E toy, int amount);

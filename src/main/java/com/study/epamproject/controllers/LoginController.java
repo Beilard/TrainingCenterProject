@@ -8,9 +8,11 @@ import static com.study.epamproject.utililty.ConsoleServiceUtility.*;
 @Component
 public class LoginController {
     private final LoginService loginService;
+    private final OrderController orderController;
 
-    public LoginController(LoginService loginService) {
+    public LoginController(LoginService loginService, OrderController orderController) {
         this.loginService = loginService;
+        this.orderController = orderController;
     }
 
     public void login() {
@@ -18,6 +20,6 @@ public class LoginController {
         String email = readString();
         write("Please enter your password: ");
         String password = readString();
-        loginService.login(email, password);
+        orderController.order(loginService.login(email, password).get());
     }
 }

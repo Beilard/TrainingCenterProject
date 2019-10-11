@@ -11,8 +11,8 @@ import java.util.regex.Pattern;
 
 @Component
 public class RegistrationValidator implements Validator<Client>{
-    private static final String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
-    private static final String PASSWORD_REGEX = "((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40})";
+    private static final String EMAIL_REGEX = "^(.+)@(.+)$";
+    private static final String PASSWORD_REGEX = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})";
 
     private final ClientRepository clientRepository;
 

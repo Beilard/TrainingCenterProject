@@ -1,6 +1,6 @@
 package com.study.epamproject.domain.toy;
 
-public abstract class Toy implements Comparable{
+public abstract class Toy implements Comparable<Toy>{
     private Long id;
     private final String name;
     private final Integer price;
