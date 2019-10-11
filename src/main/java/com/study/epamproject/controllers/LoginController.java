@@ -16,9 +16,9 @@ public class LoginController {
     }
 
     public void login() {
-        write("Please enter your email: ");
+        write(Messages.getMessage("email"));
         String email = readString();
-        write("Please enter your password: ");
+        write(Messages.getMessage("password"));
         String password = readString();
         orderController.order(loginService.login(email, password).get());
     }

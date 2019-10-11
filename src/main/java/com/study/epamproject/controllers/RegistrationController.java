@@ -14,15 +14,15 @@ public class RegistrationController {
     }
 
     public void register() {
-        write("Please enter your email: ");
+        write(Messages.getMessage("email"));
         String email = readString();
         write("Please enter your password (minimum 8 characters, upper/lowercase + special symbol) : ");
         String password = readString();
-        write("Please enter your budget: ");
+        write(Messages.getMessage("budget"));
         int budget = read();
-        write("Please enter your name: ");
+        write(Messages.getMessage("name"));
         String name = readString();
-        write("Please enter your surname: ");
+        write(Messages.getMessage("surname"));
         String surname = readString();
         UserCredential userCredential = new UserCredential(email, password);
 

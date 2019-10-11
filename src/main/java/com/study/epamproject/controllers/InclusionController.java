@@ -17,7 +17,7 @@ public class InclusionController {
     }
 
     void add(Order order, ToyRepository toyRepository){
-        write("Please, enter the ID of the toy you want to add: ");
+        write(Messages.getMessage("orderid"));
         Long id = (long) read();
         write("Please, enter the amount of items your would like to add: ");
         int amount = read();
@@ -25,7 +25,7 @@ public class InclusionController {
     }
 
     void remove(Order order, ToyRepository toyRepository){
-        write("Please, enter the ID of the toy you want to add: ");
+        write("Please, enter the ID of the toy you want to remove: ");
         Long id = (long) read();
         orderService.remove(order, toyRepository.findById(id).get(), 10);
     }

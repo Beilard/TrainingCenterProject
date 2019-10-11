@@ -30,7 +30,7 @@ public class MenuController {
         write("3. Change language");
         write("4. Exit");
         write(" ");
-        write("Please select your option");
+        write(Messages.getMessage("options"));
 
         int option = read();
         selection(option);

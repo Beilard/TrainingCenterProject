@@ -22,17 +22,17 @@ public class OrderController {
 
     public void order(Client client) {
         Order order = orderService.create();
-        write("Here's a list of available toys: ");
+        write(Messages.getMessage("toylist"));
         write("ID Item \t\t\t Price");
         write(toyRepository.toString());
         if (!(order.getItems().isEmpty())) {
             write("Your current order: " + order.getItems().toString());
         }
-        write("Select your options");
-        write("1. Add a toy to the order");
-        write("2. Remove a toy from the order");
-        write("3. Sort by price");
-        write("4. Finish order");
+        write(Messages.getMessage("options"));
+        write(Messages.getMessage("addToy"));
+        write(Messages.getMessage("removeToy"));
+        write(Messages.getMessage("sort"));
+        write(Messages.getMessage("finish"));
 
         int option = read();
         selection(option, order, toyRepository);
@@ -53,6 +53,7 @@ public class OrderController {
             case 4:
                 orderService.saveOrder(order);
                 System.exit(0);
+                write("Thanks for the order#" + order.getId());
                 break;
         }
     }
