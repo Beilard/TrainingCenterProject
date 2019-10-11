@@ -3,9 +3,7 @@ package com.study.epamproject.utililty;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-/**
- * Util class for exception message constants
- */
+
 public final class ExceptionMessage {
 
     public static final Locale ENGLISH = new Locale("en", "US");

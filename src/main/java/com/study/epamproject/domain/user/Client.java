@@ -1,6 +1,7 @@
 package com.study.epamproject.domain.user;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Client {
     private final List<Long> ordersById;
@@ -46,6 +47,28 @@ public class Client {
 
     public int getBudget() {
         return budget;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Client)) {
+            return false;
+        }
+        Client client = (Client) o;
+        return budget == client.budget &&
+                Objects.equals(ordersById, client.ordersById) &&
+                Objects.equals(id, client.id) &&
+                Objects.equals(name, client.name) &&
+                Objects.equals(surname, client.surname) &&
+                Objects.equals(userCredential, client.userCredential);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ordersById, id, name, surname, userCredential, budget);
     }
 
     public static class ClientBuilder<B extends ClientBuilder<B>> {

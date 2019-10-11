@@ -3,8 +3,8 @@ package com.study.epamproject.domain.toy;
 public class Skateboard extends MovableToy {
     private final int boardLength;
 
-    public Skateboard(String name, Integer price, Manufacturer manufacturer, int numberOfWheels, int boardLength) {
-        super(name, price, manufacturer, numberOfWheels);
+    public Skateboard(Long id, String name, Integer price, Manufacturer manufacturer, int numberOfWheels, int boardLength) {
+        super(id, name, price, manufacturer, numberOfWheels);
         this.boardLength = boardLength;
     }
 

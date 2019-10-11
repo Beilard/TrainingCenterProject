@@ -5,8 +5,8 @@ public abstract class HumanoidFigurine extends Toy {
     private final String skinColor;
     private final int numberOfLimbs;
 
-    public HumanoidFigurine(String name, Integer price, Manufacturer manufacturer, String gender, String skinColor, int numberOfLimbs) {
-        super(name, price, manufacturer);
+    public HumanoidFigurine(Long id, String name, Integer price, Manufacturer manufacturer, String gender, String skinColor, int numberOfLimbs) {
+        super(id, name, price, manufacturer);
         this.gender = gender;
         this.skinColor = skinColor;
         this.numberOfLimbs = numberOfLimbs;

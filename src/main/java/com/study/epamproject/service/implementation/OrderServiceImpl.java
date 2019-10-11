@@ -29,9 +29,7 @@ public class OrderServiceImpl<E extends Toy> implements OrderService<Toy> {
     @Override
     public void addItem(Order order, Toy toy, int amount) {
         orderValidator(order, toy, amount);
-        for (int i = 0; i < amount; i++) {
-            order.addToy(toy);
-        }
+        order.addToy(toy);
     }
 
     @Override

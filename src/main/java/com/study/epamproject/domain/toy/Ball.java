@@ -4,8 +4,8 @@ public class Ball extends Toy {
     private final int radius;
     private final String color;
 
-    public Ball(String name, Integer price, Manufacturer manufacturer, int radius, String color) {
-        super(name, price, manufacturer);
+    public Ball(Long id, String name, Integer price, Manufacturer manufacturer, int radius, String color) {
+        super(id, name, price, manufacturer);
         this.radius = radius;
         this.color = color;
     }

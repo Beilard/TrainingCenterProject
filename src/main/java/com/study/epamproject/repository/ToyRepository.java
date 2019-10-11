@@ -13,4 +13,5 @@ public interface ToyRepository extends CrudRepository<Toy> {
     Optional<Toy> findByName(String name);
 
     List<Toy> sortByPrice();
+    public List<Toy> getToys();
 }

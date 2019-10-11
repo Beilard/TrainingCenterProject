@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class OrderTest {
     private List<Toy> toys = new LinkedList<>();
     private Order order;
-    Ball ball = new Ball("Ball", 100, new Manufacturer("Nike", 0), 10, "Red");
+    Ball ball = new Ball(1L,"Ball", 100, new Manufacturer("Nike", 0), 10, "Red");
 
     @Before
     public void setup() {

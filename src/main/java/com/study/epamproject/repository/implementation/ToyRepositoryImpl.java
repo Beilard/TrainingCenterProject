@@ -52,7 +52,7 @@ public class ToyRepositoryImpl implements ToyRepository {
     public Optional<Toy> findById(Long id) {
         for (Toy t : toys) {
             if (t.getId().equals(id)) {
-                return Optional.ofNullable(t);
+                return Optional.of(t);
             }
         }
         return Optional.empty();
@@ -88,8 +88,12 @@ public class ToyRepositoryImpl implements ToyRepository {
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (Toy t : toys) {
-            result.append(t.getId()).append(t.getName()).append("\t").append(t.getPrice()).append("\n");
+            result.append(t.getId()).append(" ").append(t.getName()).append("\t").append(t.getPrice()).append("\n");
         }
         return result.toString();
+    }
+
+    public List<Toy> getToys() {
+        return toys;
     }
 }

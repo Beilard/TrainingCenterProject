@@ -6,6 +6,8 @@ import com.study.epamproject.repository.ClientRepository;
 import com.study.epamproject.service.RegistrationService;
 import com.study.epamproject.service.encoder.PasswordEncoder;
 import com.study.epamproject.service.validator.Validator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     private static Long id = 0L;
     private final Validator validator;
     private final ClientRepository clientRepository;
+    private Logger logger = LogManager.getLogger(RegistrationServiceImpl.class);
 
     public RegistrationServiceImpl(@Qualifier("registrationValidator") Validator validator, ClientRepository clientRepository) {
         this.validator = validator;

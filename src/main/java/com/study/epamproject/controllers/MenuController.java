@@ -9,8 +9,6 @@ import static com.study.epamproject.utililty.ConsoleServiceUtility.*;
 
 @Controller
 public class MenuController {
-    private static final Scanner IN = new Scanner(System.in);
-    public static final String LANGUAGE = "Select your language:\n" + "1)Russian\n" + "2)English";
 
     private final LoginController loginController;
     private final RegistrationController registrationController;

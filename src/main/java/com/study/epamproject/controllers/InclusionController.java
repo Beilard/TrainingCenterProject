@@ -4,7 +4,6 @@ import com.study.epamproject.domain.order.Order;
 import com.study.epamproject.repository.ToyRepository;
 import com.study.epamproject.service.OrderService;
 import com.study.epamproject.utililty.Messages;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
 import static com.study.epamproject.utililty.ConsoleServiceUtility.*;
@@ -12,9 +11,9 @@ import static com.study.epamproject.utililty.ConsoleServiceUtility.*;
 @Controller
 public class InclusionController {
 
-    private final OrderService  orderService;
+    private final OrderService<com.study.epamproject.domain.toy.Toy> orderService;
 
-    public InclusionController(OrderService orderService) {
+    public InclusionController(OrderService<com.study.epamproject.domain.toy.Toy> orderService) {
         this.orderService = orderService;
     }
 
@@ -23,7 +22,8 @@ public class InclusionController {
         Long id = (long) read();
         write("Please, enter the amount of items your would like to add: ");
         int amount = read();
-        orderService.addItem(order, toyRepository.findById(id).get(), amount);
+        order.addToy(toyRepository.findById(id).get());
+//        orderService.addItem(order, toyRepository.getToys().get(Math.toIntExact(id)), amount);
     }
 
     void remove(Order order, ToyRepository toyRepository){
