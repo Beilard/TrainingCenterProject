@@ -1,15 +1,16 @@
 package com.study.epamproject.service;
 
+import com.study.epamproject.domain.order.Order;
 import com.study.epamproject.domain.toy.Toy;
 
 import java.util.List;
 
 public interface OrderService<E extends Toy> {
-    void addItem(E toy, int amount);
+    Order create();
 
-    List<E> getAll();
+    void addItem(Order order, E toy, int amount);
 
-    E update(E toy, int amount);
+    List<E> getAll(Order order);
 
-    boolean remove(E toy, int amount);
+    void remove(Order order, E toy, int amount);
 }

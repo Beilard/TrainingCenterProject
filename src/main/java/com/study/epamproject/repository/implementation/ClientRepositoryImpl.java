@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 @Repository
 public class ClientRepositoryImpl<E extends Client> implements ClientRepository {
-    Map<Long, Client> idToClient = new HashMap<>();
+    private Map<Long, Client> idToClient = new HashMap<>();
 
     @Override
     public Optional<Client> findByName(String name) {

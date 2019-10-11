@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Optional;
 @Repository
 public class OrderRepositoryImpl implements OrderRepository {
-    Map<Long, Order> idToOrder = new HashMap<>();
+    private Map<Long, Order> idToOrder = new HashMap<>();
 
     @Override
     public Order save(Order item) {

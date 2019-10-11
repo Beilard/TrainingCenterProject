@@ -16,4 +16,9 @@ public class Manufacturer {
     public int getCode() {
         return code;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 @Repository
 public class ToyRepositoryImpl implements ToyRepository {
-    Map<Long, Toy> idToToy = new HashMap<>();
+    private Map<Long, Toy> idToToy = new HashMap<>();
 
     @Override
     public List<Toy> findAllByManufacturer(Manufacturer manufacturer) {
@@ -62,5 +62,15 @@ public class ToyRepositoryImpl implements ToyRepository {
     @Override
     public Optional<Toy> deleteById(Long id) {
         return Optional.ofNullable(idToToy.remove(id));
+    }
+
+    @Override
+    public String toString() {
+         List<Toy> list = (List) idToToy.values();
+         StringBuilder result = new StringBuilder();
+         for (Toy t : list) {
+             result.append(t.getId()).append(t.getName()).append("\t").append(t.getPrice()).append("\n");
+         }
+         return result.toString();
     }
 }

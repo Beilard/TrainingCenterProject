@@ -7,19 +7,25 @@ import java.util.List;
 
 public class Order {
     private final Long id;
-    private List<? extends Toy> items = new LinkedList<>();
+    private List<Toy> items = new LinkedList<>();
 
 
-    public Order(Long id, List<? extends Toy> items) {
+    public Order(Long id) {
         this.id = id;
-        this.items = items;
     }
 
-    public List<? extends Toy> getItems() {
+    public List<Toy> getItems() {
         return items;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void addToy(Toy toy) {
+        items.add(toy);
+    }
+    public void removeToy(Toy toy){
+        items.remove(toy);
     }
 }

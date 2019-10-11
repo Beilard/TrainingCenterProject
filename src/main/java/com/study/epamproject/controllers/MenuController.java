@@ -46,10 +46,10 @@ public class MenuController {
                 registrationController.register();
                 break;
             case 3:
+                //
                 break;
             case 4:
                 System.exit(0);
-
         }
     }
 }

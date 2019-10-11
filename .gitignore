@@ -2,6 +2,7 @@ target/
 lib/
 !**/src/main/**
 !**/src/test/**
+.log
 
 ### IntelliJ IDEA ###
 .idea
