@@ -28,13 +28,13 @@ public class PasswordValidatorTest {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][]{
-                {"n!k@s", false},                         // it's less that 8 characters long
-                {"gregorymarjames-law", false},         // it doesn't contain an digits or upper case characters
-                {" abcdFg45*", false},                  // characters ~ in not allowed
-                {"n!koabcD#AX", false},                 // there should be a digit
-                {"ABCASWF2!", false},                 // there should be a lower case character
+                {"n!k@s", false},
+                {"gregorymarjames-law", false},
+                {" abcdFg45*", false},
+                {"n!koabcD#AX", false},
+                {"ABCASWF2!", false},
 
-                // valid passwords
+
 
                 {"n!k@sn1Kos", true},
                 {"J@vaC0deG##ks", true},
