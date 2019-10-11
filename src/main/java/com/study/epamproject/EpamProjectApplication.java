@@ -1,6 +1,8 @@
 package com.study.epamproject;
 
 import com.study.epamproject.controllers.MenuController;
+import com.study.epamproject.utililty.ConsoleServiceUtility;
+import com.study.epamproject.utililty.Messages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.CommandLineRunner;
@@ -25,6 +27,13 @@ public class EpamProjectApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 		LOG.info("EXECUTING : command line runner");
-		menuController.start();
+		Messages.setLocale(Messages.ENGLISH);
+
+		try {
+			menuController.start();
+		} catch (RuntimeException e) {
+			ConsoleServiceUtility.write("!!!!!" + e.getMessage() + "!!!!!");
+			menuController.start();
+		}
 	}
 }

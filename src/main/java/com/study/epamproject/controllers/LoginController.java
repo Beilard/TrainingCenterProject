@@ -1,11 +1,12 @@
 package com.study.epamproject.controllers;
 
 import com.study.epamproject.service.LoginService;
-import org.springframework.stereotype.Component;
+import com.study.epamproject.utililty.Messages;
+import org.springframework.stereotype.Controller;
 
 import static com.study.epamproject.utililty.ConsoleServiceUtility.*;
 
-@Component
+@Controller
 public class LoginController {
     private final LoginService loginService;
     private final OrderController orderController;

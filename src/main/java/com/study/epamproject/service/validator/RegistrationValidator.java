@@ -33,7 +33,7 @@ public class RegistrationValidator implements Validator<Client>{
         }
 
         if (!userCredential.getPassword().matches(PASSWORD_REGEX)) {
-            throw new InvalidEmailFormatException("Email format not supported");
+            throw new InvalidEmailFormatException("Password format not supported");
         }
 
         if (clientRepository.findByEmail(userCredential.getEmail()).isPresent()) {

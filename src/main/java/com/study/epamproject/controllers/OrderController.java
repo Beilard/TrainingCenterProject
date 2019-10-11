@@ -4,11 +4,13 @@ import com.study.epamproject.domain.order.Order;
 import com.study.epamproject.domain.user.Client;
 import com.study.epamproject.repository.ToyRepository;
 import com.study.epamproject.service.OrderService;
+import com.study.epamproject.utililty.Messages;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import static com.study.epamproject.utililty.ConsoleServiceUtility.*;
 
-@Component
+@Controller
 public class OrderController {
     private final ToyRepository toyRepository;
     private final OrderService orderService;
