@@ -46,7 +46,7 @@ public class OrderController {
                 inclusionController.remove(order, toyRepository);
                 break;
             case 3:
-                //
+                toyRepository.sortByPrice();
                 break;
             case 4:
 
